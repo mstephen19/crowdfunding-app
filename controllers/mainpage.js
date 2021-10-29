@@ -9,6 +9,7 @@ router.route('/').get(async (req, res) => {
     const projects = data.map((proj) => {
       return proj.get({ plain: true });
     });
+    console.log(projects);
     res.render('homepage', { projects, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(418).json(err);
